@@ -1,70 +1,27 @@
-<UserControl xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-
-             xmlns:v="using:Launcher.Views"
-             xmlns:vm="using:Launcher.ViewModels"
-
-             mc:Ignorable="d"
-             d:DesignWidth="800"
-             d:DesignHeight="450"
-
-             x:DataType="vm:Login"
-             x:Class="Launcher.Views.Login">
-
-
-  <StackPanel Spacing="8"
-              Margin="8,0,0,0"
-              Orientation="Vertical">
-
-    <TextBlock FontSize="18"
-               Classes="bold"
-               HorizontalAlignment="Center"
-               Text="{DynamicResource Text.Login}" />
-
-    <TextBlock Classes="bold"
-               Foreground="Yellow"
-               Text="{Binding Warning}"
-               TextAlignment="Center"
-               HorizontalAlignment="Center"
-               IsVisible="{Binding Warning, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"/>
-
-    <Grid RowDefinitions="32"
-          ColumnDefinitions="120,*">
-
-      <TextBlock Grid.Column="0"
-                 Margin="0,0,8,0"
-                 HorizontalAlignment="Right"
-                 Text="{DynamicResource Text.Login.Username}" />
-
-      <TextBox Grid.Column="1"
-               CornerRadius="3"
-               v:AutoFocusBehaviour.IsEnabled="{Binding RememberUsername, Converter={x:Static BoolConverters.Not}}"
-               Text="{Binding Username, Mode=TwoWay}" />
-    </Grid>
-
-    <Grid RowDefinitions="32"
-          ColumnDefinitions="120,*">
-
-      <TextBlock Grid.Column="0"
-                 Margin="0,0,8,0"
-                 HorizontalAlignment="Right"
-                 Text="{DynamicResource Text.Login.Password}" />
-
-      <TextBox Grid.Column="1"
-               CornerRadius="3"
-               PasswordChar="•"
-               v:AutoFocusBehaviour.IsEnabled="{Binding RememberUsername}"
-               Text="{Binding Password, Mode=TwoWay}" />
-    </Grid>
-
-    <Grid RowDefinitions="32"
-          ColumnDefinitions="120,*">
-
-      <CheckBox Grid.Column="1" Content="{DynamicResource Text.Login.RememberUsername}" IsChecked="{Binding RememberUsername}" />
-    </Grid>
-
-  </StackPanel>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<UserControl xmlns="https://github.com/avaloniaui" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:v="using:Launcher.Views" 
+			 xmlns:vm="using:Launcher.ViewModels" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+			 mc:Ignorable="d" 
+			 d:DesignWidth="800" 
+			 d:DesignHeight="450" 
+			 x:DataType="vm:Login" 
+			 x:Class="Launcher.Views.Login">
+	<StackPanel Spacing="6" Orientation="Vertical">
+		<TextBlock FontSize="18" HorizontalAlignment="Center" Text="{DynamicResource Text.Login}" Margin="8" FontFamily="/Assets/Fonts/Maiandra-GD-Regular.otf#Maiandra GD" />
+		<TextBlock Foreground="Yellow" Text="{Binding Warning}" TextAlignment="Center" HorizontalAlignment="Center" IsVisible="{Binding Warning, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
+		<Grid RowDefinitions="28" ColumnDefinitions="120,*">
+			<TextBlock Grid.Column="0" Margin="0,0,5,0" HorizontalAlignment="Right" Text="{DynamicResource Text.Login.Username}" FontSize="15" FontFamily="/Assets/Fonts/Maiandra-GD-Regular.otf#Maiandra GD" />
+			<TextBox Grid.Column="1" CornerRadius="3" v:AutoFocusBehaviour.IsEnabled="{Binding RememberUsername, Converter={x:Static BoolConverters.Not}}" Text="{Binding Username, Mode=TwoWay}" />
+		</Grid>
+		<CheckBox Grid.Column="1" FontSize="15" CornerRadius="5" FontFamily="/Assets/Fonts/Maiandra-GD-Regular.otf#Maiandra GD" HorizontalAlignment="Left" Margin="120,0,0,0" Content="{DynamicResource Text.Login.RememberUsername}" IsChecked="{Binding RememberUsername}" />
+		<Grid RowDefinitions="28" ColumnDefinitions="120,*">
+			<TextBlock Grid.Column="0" Margin="0,0,5,0" HorizontalAlignment="Right" Text="{DynamicResource Text.Login.Password}" FontSize="15" FontFamily="/Assets/Fonts/Maiandra-GD-Regular.otf#Maiandra GD" />
+			<TextBox Grid.Column="1" CornerRadius="3" PasswordChar="•" v:AutoFocusBehaviour.IsEnabled="{Binding RememberPassword}" Text="{Binding Password, Mode=TwoWay}" />
+		</Grid>
+		<CheckBox Grid.Column="1" CornerRadius="5" FontFamily="/Assets/Fonts/Maiandra-GD-Regular.otf#Maiandra GD" FontSize="15" HorizontalAlignment="Left" Margin="120,0,0,0" Content="{DynamicResource Text.Login.RememberPassword}" IsChecked="{Binding RememberPassword}" />
+	</StackPanel>
 </UserControl>

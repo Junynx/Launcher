@@ -1,19 +1,14 @@
 using System.Threading.Tasks;
-
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
 using Avalonia.Controls.ApplicationLifetimes;
-
-using NLog;
-
-using Velopack;
-using Velopack.Sources;
-
-using NuGet.Versioning;
-
+using Avalonia.Markup.Xaml;
 using Launcher.Models;
 using Launcher.ViewModels;
+using NLog;
+using NuGet.Versioning;
+using Velopack;
+using Velopack.Sources;
 
 namespace Launcher;
 
@@ -54,14 +49,13 @@ public partial class App : Application
 
         var settings = Settings.Instance;
 
-        var splash = new Views.Splash();
-
-        applicationLifetime.MainWindow = splash;
+        var main = new Views.Main();
 
 #if RELEASE
         if (_updateManager.IsInstalled)
         {
-            splash.ViewModel.Message = GetText("Text.Splash.CheckForUpdates");
+
+            main.ViewModel.Message = GetText("Text.Main.CheckForUpdates");
 
             var updateInfo = await _updateManager.CheckForUpdatesAsync();
 
@@ -69,10 +63,10 @@ public partial class App : Application
             {
                 await _updateManager.DownloadUpdatesAsync(updateInfo, (p) =>
                 {
-                    splash.ViewModel.Message = GetText("Text.Splash.DownloadProgress", updateInfo.TargetFullRelease.Version, p);
+                    main.ViewModel.Message = GetText("Text.Main.DownloadProgress", updateInfo.TargetFullRelease.Version, p);
                 });
 
-                splash.ViewModel.Message = GetText("Text.Splash.RestartLauncher");
+                main.ViewModel.Message = GetText("Text.Main.RestartLauncher");
 
                 await Task.Delay(500);
 
@@ -83,18 +77,15 @@ public partial class App : Application
         }
 #endif
 
-        splash.ViewModel.Message = GetText("Text.Splash.LauncherUpToDate");
+        main.ViewModel.Message = GetText("Text.Main.LauncherUpToDate");
 
         await Task.Delay(500);
-
-        var main = new Views.Main();
-
-        _main = main.ViewModel;
+		
+		_main = main.ViewModel;
 
         applicationLifetime.MainWindow = main;
 
         main.Show();
-        splash.Close();
 
         base.OnFrameworkInitializationCompleted();
     }
