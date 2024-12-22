@@ -35,7 +35,7 @@
 				<Button Classes="no_background" Opacity="100" Command="{Binding ShowSettingsCommand}">
 					<Path Width="16" Height="16" Data="{StaticResource Icons.Settings}" Stretch="Fill" />
 				</Button>
-				<Button Classes="flat primary" Opacity="100" BorderBrush="#3C4C74" BorderThickness="1" FontFamily="/Assets/Fonts/Maiandra-GD-Regular.otf#Maiandra GD" CornerRadius="5" FontSize="14" Command="{Binding AddServerCommand}">
+				<Button Classes="flat primary" Opacity="100" BorderBrush="{DynamicResource Color.Border}" BorderThickness="1" FontFamily="/Assets/Fonts/Maiandra-GD-Regular.otf#Maiandra GD" CornerRadius="5" FontSize="14" Command="{Binding AddServerCommand}">
 					<TextBlock Text="Add Server" />
 				</Button>
 			</StackPanel>
@@ -84,7 +84,7 @@
 				<ContentControl Content="{Binding Popup}" Opacity="0.9" ClipToBounds="False">
 					<ContentControl.DataTemplates>
 						<DataTemplate DataType="vm:Popup">
-							<Border Margin="8,0,8,8" Background="{StaticResource Color.Window}" BorderBrush="#3C4C74" BorderThickness="1" Effect="drop-shadow(8 8 8 #40000000)">
+							<Border Margin="8,0,8,8" Background="{StaticResource Color.Window}" BorderBrush="{DynamicResource Color.Border}" BorderThickness="1" Effect="drop-shadow(8 8 8 #40000000)">
 								<Border.CornerRadius>
 									<OnPlatform Default="10,10,10,10" Linux="0" />
 								</Border.CornerRadius>
@@ -93,8 +93,8 @@
 									<ContentPresenter Margin="0,8" Content="{Binding View}" IsHitTestVisible="{Binding InProgress, Converter={x:Static BoolConverters.Not}}" />
 									<!-- Options -->
 									<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" IsVisible="{Binding InProgress, Converter={x:Static BoolConverters.Not}}">
-										<Button Classes="flat primary" Click="OnPopupSure" Width="62" Height="30" FontSize="15" CornerRadius="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{DynamicResource Text.Ok}" FontWeight="Medium" FontFamily="/Assets/Fonts/Maiandra-GD-Regular.otf#Maiandra GD" HotKey="Enter" />
-										<Button Classes="flat primary" Margin="10,0,0,0" CornerRadius="5" FontSize="15" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{DynamicResource Text.Cancel}" FontFamily="/Assets/Fonts/Maiandra-GD-Regular.otf#Maiandra GD" FontWeight="Medium" Click="OnPopupCancel" />
+										<Button Classes="flat primary" BorderBrush="{DynamicResource Color.Border}" BorderThickness="1" Click="OnPopupSure" Width="62" Height="30" FontSize="15" CornerRadius="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{DynamicResource Text.Ok}" FontWeight="Medium" FontFamily="/Assets/Fonts/Maiandra-GD-Regular.otf#Maiandra GD" HotKey="Enter" />
+										<Button Classes="flat primary" BorderBrush="{DynamicResource Color.Border}" BorderThickness="1" Margin="10,0,0,0" CornerRadius="5" FontSize="15" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{DynamicResource Text.Cancel}" FontFamily="/Assets/Fonts/Maiandra-GD-Regular.otf#Maiandra GD" FontWeight="Medium" Click="OnPopupCancel" />
 									</StackPanel>
 									<!-- Running -->
 									<StackPanel Orientation="Vertical" IsVisible="{Binding InProgress}">
@@ -116,7 +116,7 @@
 					<ItemsControl.ItemTemplate>
 						<DataTemplate DataType="m:Notification">
 							<Grid Width="320" Margin="7">
-								<Border Background="{StaticResource Color.Window}" BorderBrush="#3C4C74" BorderThickness="1" CornerRadius="10" Opacity="90" Effect="drop-shadow(8 8 8 #40000000)" />
+								<Border Background="{StaticResource Color.Window}" BorderBrush="{DynamicResource Color.Border}" BorderThickness="1" CornerRadius="10" Opacity="90" Effect="drop-shadow(8 8 8 #40000000)" />
 								<Grid Margin="7" RowDefinitions="20,Auto,15">
 									<StackPanel Grid.Row="0" Orientation="Horizontal" IsVisible="{Binding IsError}">
 									    <Image Source="/Assets/info.png" Stretch="None" HorizontalAlignment="Left"/>

@@ -9,8 +9,7 @@
 	<SolidColorBrush x:Key="Color.Contents">#FF181818</SolidColorBrush>
 	<SolidColorBrush x:Key="Color.Server">#000000</SolidColorBrush>
 	<SolidColorBrush x:Key="Color.Description">#000000</SolidColorBrush>
-	<SolidColorBrush x:Key="Color.Border0">#4C5C85</SolidColorBrush>
-	<SolidColorBrush x:Key="Color.Border1">#4C5C85</SolidColorBrush>
+	<SolidColorBrush x:Key="Color.Border">#3C4C74</SolidColorBrush>
 	<SolidColorBrush x:Key="Color.FlatButton.PrimaryBackground">#3C4C74</SolidColorBrush>
 	<SolidColorBrush x:Key="Color.FlatButton.PrimaryBackgroundHovered">#38476A</SolidColorBrush>
 	<SolidColorBrush x:Key="Color.FG1">#ffffff</SolidColorBrush>

@@ -40,7 +40,7 @@
 		<Setter Property="BorderThickness" Value="1" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />
 		<Setter Property="Background" Value="{StaticResource Color.Contents}" />
-		<Setter Property="BorderBrush" Value="{StaticResource Color.Border1}" />
+		<Setter Property="BorderBrush" Value="{StaticResource Color.Border}" />
 	</Style>
 	<Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
 		<Setter Property="Background" Value="{StaticResource Color.Contents}" />
