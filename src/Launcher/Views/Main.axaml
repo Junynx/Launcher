@@ -81,7 +81,7 @@
 		<Grid Grid.Row="0" Grid.ColumnSpan="2" IsVisible="{Binding Popup, Converter={x:Static ObjectConverters.IsNotNull}}">
 			<Border Background="{StaticResource Color.Window}" Opacity="0.5" PointerPressed="OnPopupCancelByClickMask" />
 			<Grid Width="500" HorizontalAlignment="Center" VerticalAlignment="Center">
-				<ContentControl Content="{Binding Popup}" Opacity="0.8" ClipToBounds="False">
+				<ContentControl Content="{Binding Popup}" Opacity="0.9" ClipToBounds="False">
 					<ContentControl.DataTemplates>
 						<DataTemplate DataType="vm:Popup">
 							<Border Margin="8,0,8,8" Background="{StaticResource Color.Window}" Effect="drop-shadow(8 8 8 #40000000)">
@@ -116,7 +116,7 @@
 					<ItemsControl.ItemTemplate>
 						<DataTemplate DataType="m:Notification">
 							<Grid Width="320" Margin="7">
-								<Border Background="{StaticResource Color.Window}" CornerRadius="5" Opacity="100" Effect="drop-shadow(8 8 8 #40000000)" />
+								<Border Background="{StaticResource Color.Window}" CornerRadius="5" Opacity="90" Effect="drop-shadow(8 8 8 #40000000)" />
 								<Grid Margin="7" RowDefinitions="20,Auto,15">
 									<StackPanel Grid.Row="0" Orientation="Horizontal" IsVisible="{Binding IsError}">
 									    <Image Source="/Assets/info.png" Stretch="None" HorizontalAlignment="Left"/>
