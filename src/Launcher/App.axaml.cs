@@ -80,8 +80,8 @@ public partial class App : Application
         main.ViewModel.Message = GetText("Text.Main.LauncherUpToDate");
 
         await Task.Delay(500);
-		
-		_main = main.ViewModel;
+
+        _main = main.ViewModel;
 
         applicationLifetime.MainWindow = main;
 
