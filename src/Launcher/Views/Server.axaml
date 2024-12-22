@@ -21,7 +21,7 @@
 		<!-- Server Status -->
 		<StackPanel Grid.Row="2" Grid.ColumnSpan="2" Margin="0,0,0,0">
 			<StackPanel Spacing="5" Orientation="Horizontal">
-				<Button Classes="flat primary" CornerRadius="5" Command="{Binding RefreshServerStatusCommand}">
+				<Button Classes="flat primary" CornerRadius="5" BorderBrush="#3C4C74" BorderThickness="1" Command="{Binding RefreshServerStatusCommand}">
 					<Path Width="13" Height="13" Opacity="40" Classes.rotating="{Binding IsRefreshing}" Data="{StaticResource Icons.Loading}" Stretch="Fill" />
 				</Button>
 				<StackPanel Orientation="Horizontal">

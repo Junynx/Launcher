@@ -35,7 +35,7 @@
 				<Button Classes="no_background" Opacity="100" Command="{Binding ShowSettingsCommand}">
 					<Path Width="16" Height="16" Data="{StaticResource Icons.Settings}" Stretch="Fill" />
 				</Button>
-				<Button Classes="flat primary" Opacity="100" FontFamily="/Assets/Fonts/Maiandra-GD-Regular.otf#Maiandra GD" CornerRadius="5" FontSize="14" Command="{Binding AddServerCommand}">
+				<Button Classes="flat primary" Opacity="100" BorderBrush="#3C4C74" BorderThickness="1" FontFamily="/Assets/Fonts/Maiandra-GD-Regular.otf#Maiandra GD" CornerRadius="5" FontSize="14" Command="{Binding AddServerCommand}">
 					<TextBlock Text="Add Server" />
 				</Button>
 			</StackPanel>
